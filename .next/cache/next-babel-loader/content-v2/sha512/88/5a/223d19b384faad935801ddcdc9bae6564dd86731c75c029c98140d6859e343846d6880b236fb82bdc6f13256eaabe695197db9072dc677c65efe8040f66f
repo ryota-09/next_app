@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Counter from '../';","map":{"version":3,"sources":["/Users/ryota/Documents/react/next_app/pages/index.js"],"names":["Counter"],"mappings":"AAAA,OAAOA,OAAP,MAAoB,KAApB","sourcesContent":["import Counter from '../'"]},"metadata":{},"sourceType":"module"}

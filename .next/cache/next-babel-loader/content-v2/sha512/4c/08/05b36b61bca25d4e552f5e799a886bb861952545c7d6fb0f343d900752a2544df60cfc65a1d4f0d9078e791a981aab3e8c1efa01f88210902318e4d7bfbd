@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Link from 'next/';","map":{"version":3,"sources":["/Users/ryota/Documents/react/next_app/pages/index.js"],"names":["Link"],"mappings":"AAAA,OAAOA,IAAP,MAAiB,OAAjB","sourcesContent":["import Link from 'next/'"]},"metadata":{},"sourceType":"module"}
