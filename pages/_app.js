@@ -9,7 +9,7 @@ class _App extends App {
         return (
             <Container>
                 <Provider store={reduxStore}>
-                    <Component {...gageProps} />
+                    <Component {...pageProps} />
                 </Provider>
             </Container>
         )

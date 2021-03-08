@@ -1,36 +1,49 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import firebase from "firebase";
 
-//ステート初期値
+//Firebaseの初期化
+var config = {
+    apiKey: "AIzaSyAAVOQck76mBLZmUna67EHQXPjheb95W7M",
+    authDomain: "ryota-firstproject.firebaseapp.com",
+    databaseURL: "https://ryota-firstproject-default-rtdb.firebaseio.com",
+    projectId: "ryota-firstproject",
+    storageBucket: "ryota-firstproject.appspot.com",
+    messagingSenderId: "601681180049",
+    appId: "1:601681180049:web:62724ac48d3a1920009630",
+    measurementId: "G-1F5J20XYK0"
+};
+
+var fireapp;
+try {
+    firebase.initializeApp(config);
+} catch (error) {
+    console.log(error.message);
+}
+export default fireapp;
+
+//ステート初期化
 const initial = {
-    message:'START',
-    count: 0
+    login:false,
+    username:'(click here!)',
+    email:'',
+    data:[],
+    items:[]
 }
 
-//レデューサー
-function counterReducer (state = initial, action) {
+//レデューサー(ダミー)
+function fireReducer(state = intitial, action) {
     switch (action.type) {
-        case 'INCREMENT':
-            return {
-                message: 'INCREMENT',
-                count: state.count + 1
-            };
-        case 'DECREMENT':
-            return {
-                message: 'DECREMENT',
-                count: state.count - 1
-            };
-        case 'RESET':
-            return {
-                message: 'RESET',
-                count: initial.count
-            };
+        //ダミー
+        case 'TESTACTION':
+        return state;
+        //デフォルト
         default:
             return state;
     }
 }
 
-//initStore関数(redux-store.jsで必要)
-export function initStore(state = initial) {
-    return createStore(counterReducer, state, applyMiddleware(thunkMiddleware))
+//initStore関数
+export function initStore(state = initial){
+    return createStore(fireReducer, state, applyMiddleware(thunkMiddleware))
 }
