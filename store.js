@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import firebase from "firebase";
 
-//Firebaseの初期化
+
 var config = {
     apiKey: "AIzaSyAAVOQck76mBLZmUna67EHQXPjheb95W7M",
     authDomain: "ryota-firstproject.firebaseapp.com",
@@ -14,6 +14,7 @@ var config = {
     measurementId: "G-1F5J20XYK0"
 };
 
+//Firebaseの初期化
 var fireapp;
 try {
     firebase.initializeApp(config);
@@ -35,7 +36,7 @@ const initial = {
 function fireReducer(state = intitial, action) {
     switch (action.type) {
         //ダミー
-        case 'TESTACTION':
+        case 'UPDATE_USER':
         return state;
         //デフォルト
         default:
